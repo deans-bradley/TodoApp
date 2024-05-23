@@ -1,29 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.IO.Packaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Xml.Linq;
 using TodoApp.Models;
 
 namespace TodoApp.ViewModels
 {
     public class TodoViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
         public ICommand AddTodoCommand { get; private set; }
 
-        public ObservableCollection<TodoItem> TodoItems { get; set; }
+        public ObservableCollection<TodoItem> TodoItems = new();
 
-        private string _title;
-        private string _description;
+        private string? _title;
+        private string? _description;
         private bool _isDone;
 
-        public string Title
+        public TodoViewModel()
+        {
+            AddTodoCommand = new RelayCommand(AddTodo);
+        }
+
+        public string? Title
         {
             get { return _title; }
             set
@@ -33,7 +30,7 @@ namespace TodoApp.ViewModels
             }
         }
 
-        public string Description
+        public string? Description
         {
             get { return _description; }
             set
@@ -53,27 +50,20 @@ namespace TodoApp.ViewModels
             }
         }
 
-        public TodoViewModel()
-        {
-            TodoItems = new ObservableCollection<TodoItem>();
-
-            AddTodoCommand = new RelayCommand(AddTodo);
-        }
-
         private void AddTodo(object parameter)
         {
             TodoItem todo = new TodoItem
             {
                 Id = Guid.NewGuid(),
-                Title = _title,
-                Description = _description,
+                Title = _title ?? throw new NullReferenceException(),
+                Description = _description ?? throw new NullReferenceException(),
                 IsDone = false
             };
 
             TodoItems.Add(todo);
-
-            // Title = "";
         }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)
         {
@@ -90,16 +80,19 @@ namespace TodoApp.ViewModels
             execute = executeAction;
         }
 
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler? CanExecuteChanged;
 
-        public bool CanExecute(object parameter)
+        public bool CanExecute(object? parameter)
         {
             return true;
         }
 
-        public void Execute(object parameter)
+        public void Execute(object? parameter)
         {
-            execute(parameter);
+            if (parameter != null)
+            {
+                execute(parameter);
+            }
         }
     }
 }

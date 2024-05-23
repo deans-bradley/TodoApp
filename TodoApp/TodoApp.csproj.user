@@ -7,18 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\ListBoxExample.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\TodoItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\ListBoxExample.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TodoItem.xaml">

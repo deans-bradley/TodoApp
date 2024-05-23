@@ -18,8 +18,7 @@ C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\refi
 C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\TodoApp.pdb
 C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\TodoApp.genruntimeconfig.cache
 C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\ref\TodoApp.dll
-C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\Views\ListBoxExample.g.cs
 C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\Views\TodoItem.g.cs
-C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\Views\ListBoxExample.baml
 C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\Views\TodoItem.baml
 C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\BradleyDeans\source\repos\TodoApp\TodoApp\obj\Debug\net8.0-windows\TodoApp.sourcelink.json
